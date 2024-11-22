@@ -2,6 +2,36 @@
     {
         "property": "theme.better-active-tab.on-right",
         "label": "Move tha active tab indicator to the right",
-        "type": "checkbox"
+        "type": "checkbox",
+        "defaultValue": false,
+        "disabledOn": []
+    },
+    {
+        "property": "theme.better-active-tab.indicator-width",
+        "label": "Define the desired indicator width (eg: 3px)",
+        "type": "string",
+        "defaultValue": "3px",
+        "disabledOn": []
+    },
+    {
+        "property": "theme.better-active-tab.brightness",
+        "label": "Define brightness for indicator if NOT using Custom Hex Code (Eg: 5)",
+        "type": "string",
+        "defaultValue": "3",
+        "disabledOn": []
+    },
+    {
+        "property": "theme.better-active-tab.custom-color-bool",
+        "label": "Enable to use custom user-defined color",
+        "type": "checkbox",
+        "defaultValue": "false",
+        "disabledOn": []
+    },
+    {
+        "property": "theme.better-active-tab.custom-color-code",
+        "label": "Enter Custom Color Hex Code (Eg: #BAD455)",
+        "type": "string",
+        "defaultValue": "#800085",
+        "disabledOn": []
     }
 ]

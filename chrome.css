@@ -6,13 +6,46 @@
     content: '';
     position: absolute;
     top: 0px;
-    width: 3px;
+    width: var(--theme-better-active-tab-indicator-width), 3px;
     height: 100%;
-    background-color: var(--zen-primary-color);
 }
 
+/* custom color if enabled*/
+@media (-moz-bool-pref: "theme.better-active-tab.custom-color-bool") {
+    .tab-background[selected='']::after {
+        background-color: var(--theme-better-active-tab-custom-color-code), #800085;
+
+        /* someone from the discord said to do this :\ */
+        background: unset; background-size: unset; background-position: unset; filter: unset;
+
+    }
+}
+
+/* use gradient bg if not */
+@media (not (-moz-bool-pref: "theme.better-active-tab.custom-color-bool")) {
+    .tab-background[selected='']::after {
+        background-color: unset;
+
+        background: var(--zen-main-browser-background);
+        background-size: 100px 100px;
+        background-position: top center;
+
+        filter: brightness(var(--theme-better-active-tab-brightness), 3);
+    }
+}
+
+/* indicator on right if enabled */
 @media (-moz-bool-pref: "theme.better-active-tab.on-right"){
     .tab-background[selected='']::after {
+        left: unset;
         right: 0px;
+    }
+}
+
+/* on left if not */
+@media (not (-moz-bool-pref: "theme.better-active-tab.on-right")){
+    .tab-background[selected='']::after {
+        right: unset;
+        left: 0px;
     }
 }
